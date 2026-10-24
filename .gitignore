@@ -1,0 +1,99 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.hypothesis/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging and build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Test and coverage artifacts
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+junit.xml
+.tox/
+.nox/
+
+# Local secrets and configuration
+.env
+.env.*
+!.env.example
+config.yaml
+*.pem
+*.key
+*.crt
+
+# Browser authentication and local sessions
+.auth/
+storage_state*.json
+*_state.json
+playwright/.auth/
+
+# Runtime outputs and generated datasets
+outputs/
+output/
+data/
+logs/
+*.log
+
+# Browser artifacts
+screenshots/
+debug_screens/
+videos/
+traces/
+test-results/
+playwright-report/
+
+# Local database state
+neo4j-data/
+neo4j-logs/
+neo4j-import/
+neo4j-plugins/
+
+# Notebooks and temporary files
+.ipynb_checkpoints/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# IDE settings
+.idea/
+.vscode/
+*.code-workspace
+
+# Operating system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# Development production
+/benchmark/
+/docs/
+/SPECS/
+/AGENTS.md
+/config.yaml
+/develop.md
+
+# Test directories at any depth
+tests/

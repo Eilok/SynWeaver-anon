@@ -1,0 +1,43 @@
+# SynWeaver LLM role configuration.
+# Copy this file to config.yaml and provide the referenced environment variable.
+# Resolution order: config.yaml, role-specific environment variables, code overrides.
+
+# Text-only crawler role for list filtering and form value generation.
+CRAWLER_TEXT_MODEL:
+  api_key: "$OPENROUTER_API_KEY"
+  base_url: "https://openrouter.ai/api/v1"
+  model_id: "deepseek/deepseek-v3.2"
+
+# Vision crawler role for state comparison during backtracking.
+CRAWLER_VISION_MODEL:
+  api_key: "$OPENROUTER_API_KEY"
+  base_url: "https://openrouter.ai/api/v1"
+  model_id: "qwen/qwen3-vl-235b-a22b-instruct"
+
+# T1 serves both agent execution and UI dataset generation.
+T1_MODEL:
+  api_key: "$OPENROUTER_API_KEY"
+  base_url: "https://openrouter.ai/api/v1"
+  model_id: "google/gemini-3-flash-preview"
+  temperature: 0.3
+  max_tokens: 4096
+
+# T2 serves collaborative optimization and trajectory reconstruction.
+T2_MODEL:
+  api_key: "$OPENROUTER_API_KEY"
+  base_url: "https://openrouter.ai/api/v1"
+  model_id: "google/gemini-3.1-pro-preview"
+  temperature: 0.7
+  max_tokens: 8192
+
+# Task generation role for before-and-after screenshot synthesis.
+TASK_GEN_MODEL:
+  api_key: "$OPENROUTER_API_KEY"
+  base_url: "https://openrouter.ai/api/v1"
+  model_id: "google/gemini-3.1-pro-preview"
+  temperature: 0.7
+  max_tokens: 4096
+  # Use "max_tokens" for gateways that mishandle max_completion_tokens.
+  # token_parameter: "max_tokens"
+  # Limit the combined encoded image data when a gateway rejects large bodies.
+  # max_image_payload_bytes: 800000
